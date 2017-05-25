@@ -12,13 +12,13 @@ RUN cd /opt && \
     ln -s apache-tinkerpop-gremlin-server-$GREMLIN_SERVER_VERSION gremlin-server && \
     rm gremlin-server.zip
 
-WORKDIR /opt/gremlin-server
-
-EXPOSE 8182
-
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+EXPOSE 8182
+
+WORKDIR /opt/gremlin-server
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
