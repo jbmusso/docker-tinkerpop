@@ -15,6 +15,3 @@ RUN cd /opt && \
 WORKDIR /opt/gremlin-console
 
 ENTRYPOINT ["bin/gremlin.sh"]
-
-CMD ["bin/gremlin.sh"]
-
