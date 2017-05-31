@@ -12,6 +12,10 @@ RUN cd /opt && \
     ln -s apache-tinkerpop-gremlin-console-$GREMLIN_CONSOLE_VERSION gremlin-console && \
     rm gremlin-console.zip
 
+COPY docker-entrypoint.sh /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 WORKDIR /opt/gremlin-console
 
-ENTRYPOINT ["bin/gremlin.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
